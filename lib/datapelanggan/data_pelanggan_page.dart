@@ -276,7 +276,35 @@
                       ),
                     ),
                   ),
-                  
+                  const SizedBox(height: 20),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 50,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        namaPelangganController.clear();
+                        emailController.clear();
+                        noTelpController.clear();
+                        alamatController.clear();
+                        provinsiController.clear();
+                        kodePosController.clear();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        //backgroundColor: Colors.transparent,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                      child: const Text(
+                        'Reset',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green,
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
