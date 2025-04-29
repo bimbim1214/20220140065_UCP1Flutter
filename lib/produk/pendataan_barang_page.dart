@@ -39,5 +39,19 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
     });
   }
 
+  @override
+  void initState() {
+    super.initState();
+    jumlahBarangController.addListener(calculateHargaBarang);
+  }
+
+  @override
+  void dispose() {
+    jumlahBarangController.dispose();
+    tanggalTController.dispose();
+    totalHargaController.dispose();
+    super.dispose();
+  }
+
   
 }
