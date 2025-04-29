@@ -59,7 +59,7 @@ class DetailDataPelangganPage extends StatelessWidget {
             SizedBox(height: 20),
             ClipOval(
               child: Image.asset(
-                'images/gambar.jpg', // Ganti ke asset gambar kamu
+                'images/gambar.jpg', 
                 width: 120,
                 height: 120,
                 fit: BoxFit.cover,
@@ -76,6 +76,25 @@ class DetailDataPelangganPage extends StatelessWidget {
             Text(noTelpPelanggan),
             SizedBox(height: 30),
 
+            
+            DetailRow('Alamat', alamatPelanggan),
+            SizedBox(height: 20),
+            Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: DetailRow('Provinsi', provinsiPelanggan),
+                ),
+                SizedBox(width: 16),
+                Expanded(
+                  child: DetailRow('Kode Pos', kodePosPelanggan),
+                ),
+              ],
+            ),
+            SizedBox(height: 40),
+
+            
+           
           ],
         ),
       ),
