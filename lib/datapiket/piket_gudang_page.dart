@@ -114,6 +114,61 @@ class _PiketGudangPageState extends State<PiketGudangPage> {
                   },
                 ),
                 const SizedBox(height: 20),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                         const Text(
+                            'Tugasan',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          TextFormField(
+                            controller: tugasanController,
+                            decoration: InputDecoration(
+                              prefixIcon: Icon(Icons.assignment),
+                              hintText: 'Tugasan',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      flex: 1,
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.green,
+                            minimumSize: const Size(double.infinity, 60), // tombol penuh tinggi
+                          ),
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              setState(() {
+                                tugasanList.add(tugasanController.text);
+                                tugasanController.clear();
+                              });
+                            }
+                          },
+                          child: const Text(
+                            'Tambah',
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
                 
               ]
             )
