@@ -236,7 +236,41 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
                     ),
                   ],
                 ),
-                
+                const SizedBox(height: 40),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        calculateHargaBarang();
+                        Navigator.push(
+                          context,
+                         MaterialPageRoute(
+                            builder: (context) => DetailPendataanPage(
+                              TanggalTransaksi: tanggalTController.text,
+                              JenisTransaksi: JenisTransaksi!,
+                              JenisBarang: JenisBarang!,
+                              JumlahBarang: jumlahBarangController.text,
+                              TotalHarga: totalHargaController.text,
+                              HargaSatuan: (jenisBarangMap[JenisBarang] ?? 0).toString(),
+                            ),
+                          ),
+                        );
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    child: const Text(
+                      'Simpan',
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
