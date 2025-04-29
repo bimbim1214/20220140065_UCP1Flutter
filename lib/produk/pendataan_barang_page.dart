@@ -116,6 +116,63 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
                     return null;
                   },
                 ),
+                const SizedBox(height: 40),
+                DropdownButtonFormField<String>(
+                  value: JenisTransaksi,
+                  hint: const Text('Pilih Jenis Transaksi'),
+                  items: barangList.map((String item) {
+                    return DropdownMenuItem<String>(
+                      value: item,
+                      child: Text(item),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      JenisTransaksi = newValue;
+                    });
+                  },
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: const BorderSide(color: Colors.green),
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Tolong pilih jenis barang';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 20),
+                DropdownButtonFormField<String>(
+                  value: JenisBarang,
+                  hint: const Text('Pilih Jenis Barang'),
+                  items: jenisBarangList.map((String item) {
+                    return DropdownMenuItem<String>(
+                      value: item,
+                      child: Text(item),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      JenisBarang = newValue;
+                    });
+                    calculateHargaBarang();
+                  },
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: const BorderSide(color: Colors.green),
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Tolong pilih jenis barang B';
+                    }
+                    return null;
+                  },
+                ),
                 
               ],
             ),
