@@ -32,5 +32,53 @@ class DetailDataPelangganPage extends StatelessWidget {
     );
   }
 
-  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green[900],
+        title: Text(
+          'Detail $namaPelanggan',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(24),
+        child: Column(
+          children: [
+            SizedBox(height: 20),
+            ClipOval(
+              child: Image.asset(
+                'images/gambar.jpg', // Ganti ke asset gambar kamu
+                width: 120,
+                height: 120,
+                fit: BoxFit.cover,
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              namaPelanggan,
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 8),
+            Text(emailPelanggan),
+            SizedBox(height: 4),
+            Text(noTelpPelanggan),
+            SizedBox(height: 30),
+
+          ],
+        ),
+      ),
+    );
+  }
 }
