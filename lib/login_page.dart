@@ -40,6 +40,7 @@ class _LoginPageState extends State<LoginPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+
                   const SizedBox(height: 40),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -70,6 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                       return null;
                     },
                   ),
+
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -113,62 +115,64 @@ class _LoginPageState extends State<LoginPage> {
                       return null;
                     },
                   ),
-                  const SizedBox(height: 30),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 55,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const HomePage(),
-                            ),
-                          );
-                        }
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromARGB(255, 19, 131, 6),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                      child: const Text(
-                        'Masuk',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text('Belum memiliki akun? '),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RegisterPage(),
-                            ),
-                          );
+                  
+                    const SizedBox(height: 30),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 55,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HomePage(),
+                              ),
+                            );
+                          }
                         },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(255, 19, 131, 6),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
                         child: const Text(
-                          'Daftar disini!',
+                          'Masuk',
                           style: TextStyle(
-                            color: Color.fromRGBO(10, 133, 22, 1),
-                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.white,
                           ),
                         ),
                       ),
-                    ],
-                  )
+                    ),
+
+                    const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text('Belum memiliki akun? '),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => RegisterPage(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'Daftar disini!',
+                            style: TextStyle(
+                              color: Color.fromRGBO(10, 133, 22, 1),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+
                 ],
-                
               ),
             ),
           ),
