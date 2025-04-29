@@ -18,5 +18,38 @@ class _RegisterPageState extends State<RegisterPage> {
   bool _obscurePassword = true; 
 
 
-  
+  @override
+  Widget build(BuildContext context) {
+    final _formKey = GlobalKey<FormState>();
+    return Scaffold(
+      body: Form(
+        key: _formKey,
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: SingleChildScrollView( 
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: 40),
+                Image.asset(
+                  'images/kebun.jpg', 
+                  height: 200,
+                ),
+                const SizedBox(height: 4),
+                const Text(
+                  'DAFTAR AKUN BARU',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 40),
+ 
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
