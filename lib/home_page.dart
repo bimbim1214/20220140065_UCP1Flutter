@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Text(
-                      'Nama Pengguna',
+                      'Selamat Datang',
                       style: TextStyle(fontSize: 12, color: Colors.white),
                     ),
                     Text(
