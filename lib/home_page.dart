@@ -72,17 +72,17 @@ class _HomePageState extends State<HomePage> {
                 width: double.infinity,
                 height: 180,
                 decoration: BoxDecoration(
-                  color: Colors.green, // latar belakang merah tua
+                  color: Colors.green, 
                   borderRadius: BorderRadius.circular(16),
                   image: const DecorationImage(
-                    image: AssetImage('images/kebunTB.png'), // Gambar kebunmu
+                    image: AssetImage('images/kebunTB.png'),
                     alignment: Alignment.centerLeft,
-                    fit: BoxFit.contain, // Biar gambar tidak terlalu besar
+                    fit: BoxFit.contain, 
                   ),
                 ),
                 child: Row(
                   children: [
-                    const SizedBox(width: 180), // Beri jarak untuk gambar di kiri
+                    const SizedBox(width: 180), 
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
@@ -108,7 +108,13 @@ class _HomePageState extends State<HomePage> {
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                               ),
-                              child: const Text('Order Now'),
+                              child: const Text('Order Now',
+                              style: TextStyle(
+                                color: Colors.green,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              )
                             ),
                           ],
                         ),
