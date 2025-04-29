@@ -28,5 +28,16 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
   String? JenisBarang;
 
   
+  void calculateHargaBarang() {
+    int jumlahBarang = int.tryParse(jumlahBarangController.text) ?? 0;
+    int hargaSatuan = jenisBarangMap[JenisBarang] ?? 0; // mengambil harga dari map berdasarkan jenis barang
+
+    setState(() {
+      hargaBarang = (jumlahBarang * hargaSatuan);
+      totalHargaController.text = hargaBarang.toString();
+  
+    });
+  }
+
   
 }
