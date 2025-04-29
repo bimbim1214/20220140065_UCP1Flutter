@@ -53,5 +53,75 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
     super.dispose();
   }
 
-  
+  @override
+  Widget build(BuildContext context) {
+    final _formKey = GlobalKey<FormState>();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Pendataan Barang',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Colors.green,
+        centerTitle: true,
+      ),
+      body: Form(
+        key: _formKey,
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: const [
+                    Text(
+                      'Tanggal Transaksi',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                TextFormField(
+                  controller: tanggalTController,
+                  decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.calendar_today),
+                    hintText: 'Tanggal Transaksi',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                      borderSide: const BorderSide(color: Colors.green),
+                    ),
+                  ),
+                  onTap: () => showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(2000),
+                    lastDate: DateTime(2101),
+                  ).then((value) {
+                    if (value != null) {
+                      tanggalTController.text = value.toString().split(' ')[0];
+                    }
+                  }),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Tolong isi tanggal transaksi';
+                    }
+                    return null;
+                  },
+                ),
+                
+              ],
+            ),
+          ),
+        ), 
+      ),
+    );
+  }
 }
