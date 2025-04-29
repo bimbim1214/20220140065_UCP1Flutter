@@ -169,7 +169,41 @@ class _PiketGudangPageState extends State<PiketGudangPage> {
                     ),
                   ],
                 ),
-                
+                const SizedBox(height: 30),
+                const Text('Daftar Tugas Piket', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                const SizedBox(height: 10),
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: tugasanList.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      color: Colors.green,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: ListTile(
+                        title: Text(
+                          tugasanList[index],
+                          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailTugasPage(
+                                namaAnggota: namaanggotaController.text,
+                                tanggal: tanggalPiketController.text,
+                                tugas: tugasanList[index]
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    );
+                  },
+                ),
               ]
             )
           )
