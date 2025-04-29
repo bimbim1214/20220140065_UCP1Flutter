@@ -14,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  bool _obscurePassword = true; // untuk toggle password visibility
+  bool _obscurePassword = true; 
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +29,10 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  //const SizedBox(height: 40),
                   Image.asset(
-                    'images/kebun.jpg', // ganti ini dengan logo segitiga kamu
+                    'images/kebun.jpg', 
                     height: 300,
                   ),
-                  //const SizedBox(height: 5),
                   const Text(
                     'SELAMAT DATANG KEMBALI',
                     style: TextStyle(
