@@ -147,31 +147,30 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
 
-                    const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text('Belum memiliki akun? '),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => RegisterPage(),
-                              ),
-                            );
-                          },
-                          child: const Text(
-                            'Daftar disini!',
-                            style: TextStyle(
-                              color: Color.fromRGBO(10, 133, 22, 1),
-                              fontWeight: FontWeight.bold,
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text('Belum memiliki akun? '),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RegisterPage(),
                             ),
+                          );
+                        },
+                        child: const Text(
+                          'Daftar disini!',
+                          style: TextStyle(
+                            color: Color.fromRGBO(10, 133, 22, 1),
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                      ],
-                    )
-
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
