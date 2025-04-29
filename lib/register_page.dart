@@ -228,6 +228,40 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 const SizedBox(height: 20),
                 
+                SizedBox(
+                  width: double.infinity, 
+                  height: 55, 
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const RegisterPage(),
+                          ),
+                        );
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromARGB(255, 26, 135, 7), 
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20), 
+                      ),
+                      elevation: 4, 
+                    ),
+                    child: const Text(
+                      'Daftar',
+                      style: TextStyle(
+                        color: Colors.white, 
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+
+
                 
               ],
             ),
