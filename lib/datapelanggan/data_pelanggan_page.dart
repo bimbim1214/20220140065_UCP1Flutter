@@ -139,6 +139,38 @@
                       ),
                     ],
                   ),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Alamat',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  TextFormField(
+                    controller: alamatController,
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.person),
+                      hintText: 'Alamat',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                        borderSide: const BorderSide(color: Colors.green),
+                      ),
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Tolong isi Alamat anda';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 20),
                   
                 ],
               ),
