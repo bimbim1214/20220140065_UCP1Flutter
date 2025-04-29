@@ -237,7 +237,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const RegisterPage(),
+                            builder: (context) => const LoginPage(),
                           ),
                         );
                       }
@@ -262,7 +262,29 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(height: 20),
 
 
-                
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text('Sudah punya akun? '),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginPage(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Login disini!',
+                          style: TextStyle(
+                            color: Color.fromRGBO(10, 133, 22, 1),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
               ],
             ),
           ),
