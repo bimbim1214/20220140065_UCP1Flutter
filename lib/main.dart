@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ucp1/login_page.dart';
+import 'package:ucp1/home_page.dart';
+import 'package:ucp1/datapelanggan/data_pelanggan_page.dart';
+import 'package:ucp1/datapiket/piket_gudang_page.dart';
+import 'package:ucp1/produk/pendataan_barang_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +24,11 @@ class MyApp extends StatelessWidget {
       initialRoute: '/login',
       routes: {
         '/login': (context) => const LoginPage(),
+        '/home' : (context) => const HomePage(),
+        '/data_pelanggan' : (context) => const DataPelangganPage(),
+        '/piket_gudang' : (context) => const PiketGudangPage(),
+        '/pendataan_barang' : (context) => const PendataanBarangPage(),
+        
       }
     );
   }
