@@ -238,6 +238,44 @@
                       ),
                     ],
                   ),
+                  const SizedBox(height: 60),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 50,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailDataPelangganPage(
+                                namaPelanggan: namaPelangganController.text,
+                                emailPelanggan: emailController.text,
+                                noTelpPelanggan: noTelpController.text,
+                                alamatPelanggan: alamatController.text,
+                                provinsiPelanggan: provinsiController.text,
+                                kodePosPelanggan: kodePosController.text,
+                              ),
+                            ),
+                          );
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                      child: const Text(
+                        'Simpan',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
                   
                 ],
               ),
