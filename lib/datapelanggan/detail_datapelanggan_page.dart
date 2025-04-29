@@ -94,7 +94,28 @@ class DetailDataPelangganPage extends StatelessWidget {
             SizedBox(height: 40),
 
             
-           
+            SizedBox(
+              width: double.infinity,
+              height: 50,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green[900],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                  (route) => false,
+                );
+                },
+                child: 
+                Text('Selesai', style: TextStyle(fontSize: 18, color: Colors.white)
+                ),
+              ),
+            ),
           ],
         ),
       ),
